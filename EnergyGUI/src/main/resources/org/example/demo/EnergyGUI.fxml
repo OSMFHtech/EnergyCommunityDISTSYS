@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.demo.EnergyGUIController">
+
+    <!-- Left panel: live stats and buttons -->
+    <left>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+            <Label text="Community Pool" />
+            <TextField fx:id="communityPoolField" editable="false"/>
+            <Label text="Grid Portion" />
+            <TextField fx:id="gridPortionField" editable="false"/>
+            <Button text="refresh" onAction="#handleRefresh"/>
+            <Separator />
+            <Label text="Start" />
+            <DatePicker fx:id="startDatePicker"/>
+            <Label text="End" />
+            <DatePicker fx:id="endDatePicker"/>
+            <Button text="show data" onAction="#handleShowData"/>
+            <Separator />
+            <Label text="Community produced" />
+            <TextField fx:id="producedField" editable="false"/>
+            <Label text="Community used" />
+            <TextField fx:id="usedField" editable="false"/>
+            <Label text="Grid used" />
+            <TextField fx:id="gridUsedField" editable="false"/>
+        </VBox>
+    </left>
+
+    <!-- Right panel: image or visual -->
+    <right>
+        <StackPane alignment="CENTER">
+            <ImageView fx:id="infoImage" fitWidth="200" preserveRatio="true">
+                <image>
+                    <Image url="@../../../Images/App_Logo.png" />
+                </image>
+            </ImageView>
+        </StackPane>
+    </right>
+
+</BorderPane>
